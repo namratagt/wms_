@@ -1,0 +1,29 @@
+{
+  "name": "wms_",
+  "version": "1.0.0",
+  "description": "Autonomous multi-robot order fulfilment under congestion",
+  "main": "out/demo.js",
+  "scripts": {
+    "build": "tsc",
+    "start": "node out/demo.js",
+    "dev": "npm run build && npm start",
+    "sim": "npm run build && node buildSim.js",
+    "simulation": "npm run sim",
+    "diagram": "node buildDiagram.js",
+    "diagrams": "npm run diagram",
+    "warehouse": "node mockWh.js",
+    "wh": "npm run warehouse",
+    "warehouse:test": "node testWh.js",
+    "test": "npm run warehouse:test",
+    "wms:test": "npm run warehouse:test",
+    "run": "npm run build && node runLive.js",
+    "warehouse:run": "npm run run",
+    "load": "node mockWh.js --scenario escalating --speed 4",
+    "order": "node injectOrder.js"
+  },
+  "type": "commonjs",
+  "devDependencies": {
+    "typescript": "^5.4.0",
+    "@types/node": "^20.0.0"
+  }
+}
